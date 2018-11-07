@@ -1,0 +1,43 @@
+<wxs module="m1">
+</wxs>
+<!-- pages/index.wxml -->
+<view id="container" wx:if="{{isAuthorityOk && isLoading}}" style="background:linear-gradient({{backgroundColors[0]}},{{backgroundColors[1]}}, {{backgroundColors[2]}}) ">
+    <view id="basic-info">
+        <view id="pm25">
+            <image style="width:60rpx;height:60rpx" src="{{pm25.icon}}" />
+            {{pm25.desc}}
+        </view>
+        <image id="choose-location" bindtap="onChooseButtonTap" style="width:60rpx;height:60rpx" src="../assets/svg/weathercock.svg" />
+        <image id="current-location" bindtap="onReloadButtonTap" style="width:60rpx;height:60rpx" src="../assets/svg/placeholder.svg" />
+        <image style="width:120rpx;height:120rpx;margin:20rpx 0;" src="{{icon}}" />
+        <view id="degree" style="font-size:68rpx;">
+            {{temperature}}
+            <image style="width:40rpx;height:60rpx" src="../assets/svg/celsius.svg" />
+        </view>
+        <view id="weather">{{skycon}}</view>
+        <view id="tips">{{tips}}</view>
+    </view>
+    <view id="today-tomorrow"></view>
+    <scroll-view id="hourly-forecast-scroll" scroll-x>
+        <view class="hourly-forecast-wrap" wx:for="{{forecast48h}}" wx:for-item="hour" wx:key="{{index}}">
+            <view class='hourly-forecast'>
+                <view class="hourly-time">{{hour.time}}</view>
+                <image class="hourly-icon" src="{{hour.icon}}" />
+                <view class="hourly-temperature">
+                    <text>{{hour.temperature}}</text>
+                    <image style="width:34rpx;height:26rpx;" src="../assets/svg/celsius.svg" />
+                </view>
+                <view class="hourly-desc">{{hour.desc}}</view>
+            </view>
+        </view>
+    </scroll-view>
+    <view id="daily-forecast-view">
+        <view wx:for="{{forecast5d}}" wx:for-item="day" wx:key="{{index}}" class="daily-forecast-wrap">
+            <text class="daily-forecast-time">{{day.time}}</text>
+            <image class="daily-forecast-icon" src="{{day.icon}}" alt="{{day.time}}" />
+            <text class="daily-forecast-temp">{{day.temperatureMAX}}</text>
+            <text class="daily-forecast-temp">{{day.temperatureMIN}}</text>
+        </view>
+    </view>
+    <view id="footer">数据来自彩云天气</view>
+</view>

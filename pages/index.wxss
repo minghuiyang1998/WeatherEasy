@@ -1,0 +1,129 @@
+/* pages/index.wxss */
+#container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    /* bottom: 0;??? */
+}
+
+#choose-location{
+    position: absolute;
+    right:20rpx;
+    top:110rpx;
+}
+
+#current-location{
+    position: absolute;
+    right:20rpx;
+    top:20rpx;
+}
+#pm25{
+    position: absolute;
+    left:20rpx;
+    top:20rpx;
+}
+
+#tips{
+    padding:70rpx;
+
+    font-size: 28rpx;
+    color: #eeeeee;
+    line-height: 36rpx;
+}
+
+#basic-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120rpx 0 40rpx;
+
+    color:#fff;
+}
+
+#hourly-forecast-scroll{
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+
+    /* background: #fff; */
+}
+
+.hourly-forecast-wrap{
+    display:inline-block;
+    border-radius:22rpx;
+    box-sizing: border-box;
+    width:268rpx;
+    background:rgba(0,0,0,0.15);
+    margin-right:32rpx;
+}
+
+.hourly-forecast{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hourly-forecast .hourly-time{
+    margin-top:10rpx;
+    opacity: 0.8;
+    font-size: 24rpx;
+    color: #F5F7FA;
+}
+
+.hourly-forecast .hourly-icon{
+    width:40rpx;
+    height:40rpx;
+    margin:10rpx 0;
+}
+
+.hourly-forecast .hourly-desc{
+    margin: 10rpx 0;
+    font-size: 32rpx;
+    color: #fff;
+    line-height: 48rpx;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+#daily-forecast-view{
+    margin: 40rpx 40rpx 60rpx;
+    text-align: center;
+}
+
+.daily-forecast-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.daily-forecast-time{
+    margin-top:10rpx;
+    opacity: 0.8;
+    font-size: 24rpx;
+    color: #F5F7FA;
+}
+
+.daily-forecast-icon{
+    flex: 1;
+    width:40rpx;
+    height:40rpx;
+    margin:10rpx 0;
+}
+
+.daily-forecast-temp{
+    display: inline-block;
+    width: 120rpx;
+    margin-top:10rpx;
+    opacity: 0.8;
+    font-size: 24rpx;
+    color: #F5F7FA; 
+}
+
+#footer{
+    color:#ccc;
+    margin:30rpx 0;
+    font-size:20rpx; 
+    text-align:center
+}
